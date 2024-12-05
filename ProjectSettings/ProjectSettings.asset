@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 26
-  productGUID: bb3f9e3a45a1e6e478f37273c8bf146c
+  productGUID: 00000000000000000000000000000000
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -918,7 +918,7 @@ PlayerSettings:
   cloudProjectId: eb206bc2-3556-4e17-8870-64ca16a1992d
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: SquidGame
+  projectName: 
   organizationId: enragedoxygen
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 1
