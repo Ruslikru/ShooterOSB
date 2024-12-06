@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 26
-  productGUID: 00000000000000000000000000000000
+  productGUID: 54c57b221ed9b984099097129c935139
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -221,7 +221,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
     Android: com.BeardedNinjaGames.VRInteractionFramework
-    Standalone: com.Bearded-Ninja-Games.VR-Interaction-Framework
+    Standalone: com.DefaultCompany.SquidGame
   buildNumber:
     Standalone: 0
     VisionOS: 0
@@ -918,7 +918,7 @@ PlayerSettings:
   cloudProjectId: eb206bc2-3556-4e17-8870-64ca16a1992d
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 
+  projectName: SquidGame
   organizationId: enragedoxygen
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 1
