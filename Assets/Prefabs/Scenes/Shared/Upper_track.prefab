@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2574263621810483894}
-  - component: {fileID: 7404810515704240558}
   m_Layer: 0
   m_Name: Upper_track
   m_TagString: Untagged
@@ -33,28 +32,6 @@ Transform:
   - {fileID: 5071774251446532156}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &7404810515704240558
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1577041592008540325}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -2858861575245194255, guid: f8036f7a174c47c4e8a5a75d878866cd, type: 3}
 --- !u!1 &7429884235322658681
 GameObject:
   m_ObjectHideFlags: 0
