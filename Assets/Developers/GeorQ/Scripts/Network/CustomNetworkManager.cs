@@ -1,11 +1,14 @@
 using UnityEngine;
 using Mirror;
+using System.Collections.Generic;
 
 
 public class CustomNetworkManager : NetworkManager
 {
     [SerializeField] private GameObject _adminPrefab;
     private int _playerID = 0;
+
+    private List<NetworkConnectionToClient> _activeClients = new List<NetworkConnectionToClient>();
 
 
     public override void OnServerAddPlayer(NetworkConnectionToClient conn)
@@ -16,7 +19,8 @@ public class CustomNetworkManager : NetworkManager
 
         if (!isAdmin)
         {
-            InitClient(player);
+            //InitClient(player);
+            _activeClients.Add(conn);
         }
 
         NetworkServer.AddPlayerForConnection(conn, player);
@@ -48,5 +52,16 @@ public class CustomNetworkManager : NetworkManager
     {
         PlayerData playerData = player.GetComponent<PlayerData>();
         playerData.PlayerID = _playerID++;
+    }
+
+    public override void OnServerDisconnect(NetworkConnectionToClient conn)
+    {
+        //_activePlayers.Remove(conn);
+        base.OnServerDisconnect(conn);
+    }
+
+    public List<NetworkConnectionToClient> GetActiveClients()
+    {
+        return _activeClients;
     }
 }

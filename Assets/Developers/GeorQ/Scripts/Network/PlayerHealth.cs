@@ -8,7 +8,7 @@ public class PlayerHealth : NetworkBehaviour
     public event Action OnPlayerDied;
     public event Action OnPlayerRespawn;
 
-    [SyncVar(hook = nameof(OnHealthChanged))]
+    [SyncVar]
     public int Health;
 
     public int MaxHealth = 100;
@@ -21,11 +21,7 @@ public class PlayerHealth : NetworkBehaviour
         IsAlive = true;
     }
 
-    private void OnHealthChanged(int oldHealth, int newHealth)
-    {
-
-    }
-
+    #region Damage
     public void DealDamage(int damageAmmount)
     {
         CmdDealDamage(damageAmmount);
@@ -52,4 +48,30 @@ public class PlayerHealth : NetworkBehaviour
         IsAlive = false;
         OnPlayerDied?.Invoke();
     }
+    #endregion
+
+    #region Heal
+    public void GetHeal()
+    {
+        CmdGetHeal();
+    }
+
+    [Command(requiresAuthority = false)]
+    private void CmdGetHeal()
+    {
+        if (!IsAlive)
+        {
+            PlayerRespawn();
+            return;
+        }
+
+        Health = MaxHealth;
+    }
+
+    private void PlayerRespawn()
+    {
+        IsAlive = true;
+        OnPlayerDied?.Invoke();
+    }
+    #endregion
 }

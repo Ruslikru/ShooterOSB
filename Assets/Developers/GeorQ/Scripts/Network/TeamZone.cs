@@ -10,7 +10,7 @@ public class TeamZone : MonoBehaviour
     {
         if (other.TryGetComponent(out PlayerHealth playerHealth))
         {
-
+            playerHealth.GetHeal();
         }    
     }
 }

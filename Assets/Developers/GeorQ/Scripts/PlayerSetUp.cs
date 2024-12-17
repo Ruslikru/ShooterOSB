@@ -1,5 +1,8 @@
+using BNG;
 using Mirror;
+using System;
 using UnityEngine;
+using UnityEngine.XR.OpenXR.NativeTypes;
 
 
 public class PlayerSetUp : NetworkBehaviour
@@ -15,14 +18,26 @@ public class PlayerSetUp : NetworkBehaviour
 
     public override void OnStartLocalPlayer()
     {
+        if (isServer)
+        {
+            DisableClientObjects();
+        }
+
         if (_hud)
         {
             _hud.SetActive(true);
+            
         }
+
         _sunglasses.SetActive(false);
         _playerCamera.SetActive(true);
         PlayerMovement playerMovement = new PlayerMovement(_playerRB, _orientation, _maskToAvoid);
         PlayerLook playerLook = new PlayerLook(_orientation, Camera.main.transform);
         _playerController.Initialize(playerMovement, playerLook);
+    }
+
+    private void DisableClientObjects()
+    {
+        XRLocalRig.Instance.transform.root.gameObject.SetActive(false);
     }
 }

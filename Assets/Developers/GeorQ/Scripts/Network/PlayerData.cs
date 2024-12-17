@@ -1,22 +1,29 @@
 using Mirror;
-using UnityEngine;
 
 
 public class PlayerData : NetworkBehaviour
 {
-    [SyncVar(hook = nameof(OnPlayerIDChanged))]
+    [SyncVar]
     public int PlayerID;
 
-    private CustomNetworkManager _networkManager;
+    [SyncVar]
+    public string PlayerNickname = "";
 
+    [SyncVar]
+    public TeamType TeamType = TeamType.None;
     
-    public void Initialize(int playerId)
-    {
-        PlayerID = playerId;
-    }
+    [SyncVar]
+    public ReloadType ReloadType = ReloadType.None;
 
-    private void OnPlayerIDChanged(int oldHealth, int newHealth)
+    [SyncVar]
+    public RoughnessType RoughnessType = RoughnessType.BloodyHell;
+
+
+    public void UpdateInfo(string nickName, TeamType teamType, ReloadType reloadType, RoughnessType roughnessType)
     {
-        Debug.Log($"Health changed from {oldHealth} to {newHealth}");
+        PlayerNickname = nickName;
+        TeamType = teamType;
+        ReloadType = reloadType;
+        RoughnessType = roughnessType;
     }
 }
