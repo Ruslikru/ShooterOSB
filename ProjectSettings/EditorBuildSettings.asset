@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Developers/GeorQ/Scenes/TestScene.unity
-    guid: c0a400f292c88cc47b9ece9e6789e8f2
+    path: Assets/Scenes/Environments/ShootingRooms.unity
+    guid: 0ea83fbb3e5421c408841fac9379b41f
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 1b687ad8ffad73643aae418a17b781c0,
       type: 2}
